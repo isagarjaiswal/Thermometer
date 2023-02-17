@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thermometer 🌡️</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
     <style>
-        .main{
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: rgb(50, 50, 75);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: start;
-        }
-        .main h1{
-            font:600 150px "montserrat";
-            color:white;
-        }
+      .main {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(50, 50, 75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: start;
+      }
+      .main h1 {
+        font: 600 150px "montserrat";
+        color: white;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main">
-        <div class="inner-div">
-            <h1> I am <br> Thermometer <span id="temp" class="fa"></span></h1>
-        </div>
+      <div class="inner-div">
+        <h1>
+          I am <br />
+          Thermometer <span id="temp" class="fa"></span>
+        </h1>
+      </div>
     </div>
     <script>
+      const tempLoad = () => {
+        let temp = document.getElementById("temp");
+        temp.innerHTML = "&#xf2cb";
+        temp.style.color = "grey";
 
+        setTimeout(() => {
+          temp.innerHTML = "&#xf2ca";
+          temp.style.color = "#f8b627";
+        }, 2000);
+        setTimeout(() => {
+          temp.innerHTML = "&#xf2c9";
+        }, 3000);
+        setTimeout(() => {
+          temp.innerHTML = "&#xf2c8";
+        }, 4000);
 
-  const tempLoad = () =>{
-    let temp = document.getElementById('temp');
-        temp.innerHTML="&#xf2cb";
-        temp.style.color = "grey"
-   
-
-    setTimeout(()=>{
-        temp.innerHTML ="&#xf2ca"
-        temp.style.color = "#f8b627"
-    },2000)
-    setTimeout(()=>{
-        temp.innerHTML ="&#xf2c9"
-    },3000)
-    setTimeout(()=>{
-        temp.innerHTML ="&#xf2c8"
-    },4000)
-
-    setTimeout(()=>{
-        temp.innerHTML ="&#xf2c7"
-        temp.style.color = "#d63031"
-    },5000)  
-
-  }
-tempLoad();
-setInterval(tempLoad,6000)
+        setTimeout(() => {
+          temp.innerHTML = "&#xf2c7";
+          temp.style.color = "#d63031";
+        }, 5000);
+      };
+      tempLoad();
+      setInterval(tempLoad, 6000);
     </script>
-</body>
+  </body>
 </html>
